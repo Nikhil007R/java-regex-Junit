@@ -3,9 +3,10 @@ package com.bridgelabz.regex;
 import java.util.Scanner;
 import java.util.regex.*;
 
-public class ValidatePlateNumber {
+public class HexColor {
 
-    private static final Pattern pattern = Pattern.compile("^[A-Z]{2}[0-9]{4}$");
+    private static final Pattern pattern = Pattern.compile("^#[A-Za-z]{2}\\d{4}$");
+
     static boolean isValid(String str){
         Matcher matcher = pattern.matcher(str);
         return matcher.matches();
@@ -14,13 +15,11 @@ public class ValidatePlateNumber {
 
         Scanner sc = new Scanner(System.in);
         String str = sc.next();
-
         if(isValid(str)){
-            System.out.println("Valid Plate Number: ");
+            System.out.println("Valid Hex code");
         }
         else{
-            System.out.println("Invalid Plate Number: ");
+            System.out.println("Invalid Hexcode");
         }
-
     }
 }
